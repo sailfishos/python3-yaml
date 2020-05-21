@@ -1,6 +1,3 @@
-# fixme: should be defined in base system side
-%define python3_sitearch %(%{__python3} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")
-
 Name:       python3-yaml
 Summary:    YAML parser and emitter for Python
 Version:    5.3
@@ -29,11 +26,11 @@ configuration files to object serialization and persistance.
 %setup -q -n %{name}-%{version}/pyyaml
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" %{__python3} setup.py build
+%py3_build
 
 %install
 rm -rf %{buildroot}
-%{__python3} setup.py install --root %{buildroot} -O1
+%py3_install
 
 %files
 %defattr(-,root,root,-)
