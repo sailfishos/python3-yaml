@@ -1,12 +1,15 @@
 Name:       python3-yaml
 Summary:    YAML parser and emitter for Python
-Version:    5.3
+Version:    5.4.1.1
 Release:    1
 License:    MIT
 URL:        http://pyyaml.org/
 Source0:    %{name}-%{version}.tar.bz2
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
+# do not use internal yaml implementation
+BuildRequires:  pkgconfig(yaml-0.1)
+BuildRequires:  python3dist(cython)
 Provides:       PyYAML
 
 %description
