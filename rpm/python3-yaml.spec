@@ -1,6 +1,6 @@
 Name:       python3-yaml
 Summary:    YAML parser and emitter for Python
-Version:    5.4.1.1
+Version:    6.0.2
 Release:    1
 License:    MIT
 URL:        http://pyyaml.org/
@@ -32,11 +32,9 @@ configuration files to object serialization and persistance.
 %py3_build
 
 %install
-rm -rf %{buildroot}
 %py3_install
 
 %files
-%defattr(-,root,root,-)
 %license LICENSE
-%doc README examples
+%doc README.md examples
 %{python3_sitearch}/*
